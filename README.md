@@ -132,3 +132,90 @@ Information security is about protecting information from unauthorized access, u
 ### ✅ Key Takeaway:
 
 Ethical hacking is legal hacking with permission to strengthen security. While AI is becoming a powerful assistant in cybersecurity, human ethical hackers remain essential for creativity, adaptability, and strategic defense.
+
+---
+
+## Hacking Methodologies and Frameworks
+
+### 1️⃣ CEH Ethical Hacking Framework
+
+- A **structured process** followed by ethical hackers to simulate real-world attacks and identify vulnerabilities.
+- **Phases:**
+
+  **1. Reconnaissance (Footprinting):** Gathering info about the target (e.g., open ports, domains).
+  **2. Scanning:** Using tools (Nmap, Nessus) to discover live systems and services.
+  **3. Gaining Access:** Exploiting vulnerabilities to enter the system.
+  **4. Maintaining Access:** Installing backdoors or persistence to simulate attacker behavior.
+  **5. Clearing Tracks:** Erasing logs or hiding activity (for simulation).
+  **6. Reporting:** Documenting findings and mitigation steps.
+
+### 2️⃣ Cyber Kill Chain Methodology
+
+Developed by Lockheed Martin, it models the stages of a cyber attack.
+
+- **Stages:**
+
+  **1. Reconnaissance:** Researching the target.
+  **2. Weaponization:** Creating malware or exploit payload.
+  **3. Delivery:** Sending the exploit (email, USB, phishing link).
+  **4. Exploitation:** Executing malicious code.
+  **5. Installation:** Installing malware/backdoor.
+  **6. Command & Control (C2):** Attacker establishes remote control.
+  **7. Actions on Objectives:** Final goal (data theft, destruction, espionage).
+
+### Tactics, Techniques, and Procedures (TTPs)
+
+- **Tactics:** The high-level goals (e.g., steal data, disrupt service).
+- **Techniques:** The methods (e.g., phishing, SQL injection).
+- **Procedures:** Step-by-step execution (craft phishing email → send → capture credentials).
+
+### 3️⃣ Adversary Behavioral Identification
+
+- Focuses on **identifying patterns of attacker behavior** instead of just specific malware.
+- **Example:** Detecting repeated login attempts from unusual locations.
+- Helps defenders spot **persistent threats** (APTs).
+
+### 4️⃣ Indicators of Compromise (IoCs)
+
+- **Definition:** Forensic clues that indicate a system **may be compromised.**
+- **Examples:**
+  - Unusual outbound traffic
+  - Unknown processes running
+  - Suspicious registry changes
+  - Unexpected system reboots
+
+ ### 5️⃣ Categories of Indicators of Compromise
+
+ - **File-based IoCs:** Malicious files, unusual hash values.
+ - **Network-based IoCs:** Suspicious IPs, abnormal traffic patterns.
+ - **Host-based IoCs:** Unusual processes, log entries, registry edits.
+ - **Email-based IoCs:** Phishing attachments, spoofed email headers.
+
+### 6️⃣ MITRE ATT&CK Framework
+
+- A globally used **knowledge base of adversary TTPs.**
+- Organized into **Tactics (objectives)** and **Techniques (methods)**.
+- Example:
+  - **Tactic:** Credential Access
+  - **Technique:** Brute Force, Keylogging
+- Widely used by security teams for **threat detection, defense strategies,** and **red teaming**.
+
+### 7️⃣ Diamond Model of Intrusion Analysis
+
+- A framework for analyzing cyber intrusions with **four core features:**
+  
+  **1. Adversary:** The attacker.
+  
+  **2. Infrastructure:** Tools, servers, domains used by the attacker.
+  
+  **3. Capability:** Malware, exploits, techniques.
+  
+  **4. Victim:** Target organization or individual.
+- Helps analysts connect attacker activity, tools, and victim details into one picture.
+
+### ✅ Key Takeaway:
+
+- Frameworks like **CEH, Cyber Kill Chain, MITRE ATT&CK, and Diamond Model** provide structured ways to **understand, simulate, and defend** against attacks.
+- Ethical hackers use these models to think like attackers and help organizations strengthen defenses.
+
+---
