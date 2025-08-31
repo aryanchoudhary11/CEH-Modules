@@ -219,3 +219,120 @@ Developed by Lockheed Martin, it models the stages of a cyber attack.
 - Ethical hackers use these models to think like attackers and help organizations strengthen defenses.
 
 ---
+
+## Information Security Controls
+
+### 1️⃣ Information Assurance (IA)
+
+- **Definition:** Ensuring that information is confidential, integral, and available (CIA triad) to authorized users.
+- **Focus:** Protect data from unauthorized access, tampering, or loss.
+- **Example:** Bank systems ensuring customer data is encrypted, consistent, and always available online.
+
+### 2️⃣ Continual/Adaptive Security Strategy
+
+- Security is **not one-time**; it must **adapt to new threats**.
+- Involves monitoring, updating security policies, and patching vulnerabilities continuously.
+- **Example:** Automatic updates on web servers, AI-based monitoring of network traffic.
+
+### 3️⃣ Defense-in-Depth
+
+- **Layered security approach:** multiple defenses at different levels.
+- Layers can include:
+  - Firewalls (network)
+  - Anti-malware (endpoint)
+  - Multi-factor authentication (user access)
+  - Encryption (data protection)
+
+- **Example:** Even if a hacker bypasses a firewall, endpoint security and encryption protect the data.
+
+### 4️⃣ What is Risk?
+
+- **Definition:** The possibility that a threat exploits a vulnerability, causing harm.
+- Formula (simplified):
+```
+Risk = Threat × Vulnerability × Impact
+```
+- **Example:** A server running outdated software is vulnerable; a hacker exploits it → potential financial loss.
+
+### 5️⃣ Risk Management
+
+- Process to **identify, evaluate, and mitigate risks**.
+- Steps:
+  1. Identify assets and threats
+  2. Assess vulnerabilities
+  3. Determine likelihood and impact
+  4. Apply countermeasures
+  5. Monitor & review
+
+- **Example:** Patching software, applying firewalls, backup plans, disaster recovery.
+
+### 6️⃣ Cyber Threat Intelligence (CTI)
+
+- **Definition:** Information about cyber threats used to defend proactively.
+- Includes data on attacker tactics, malware signatures, vulnerabilities, etc.
+- **Example:** Security team receives CTI reports on new ransomware targeting Windows servers.
+
+### 7️⃣ Threat Intelligence Lifecycle
+
+**1. Planning & Direction:** Define what threats to monitor.
+
+**2. Collection:** Gather raw threat data (logs, open sources, feeds).
+
+**3. Processing:** Organize and filter data.
+
+**4. Analysis:** Identify patterns, TTPs (tactics, techniques, procedures).
+
+**5. Dissemination:** Share actionable intelligence with stakeholders.
+
+**6. Feedback:** Review and improve intelligence.
+
+### 8️⃣ Threat Modeling
+
+- **Definition:** Visualizing potential threats to identify vulnerabilities before attacks happen.
+- Tools: STRIDE, PASTA, attack trees.
+- **Example:** Map your web app → identify SQL injection, XSS → prioritize fixes.
+
+### 9️⃣ Incident Management
+
+- **Definition:** Policies and procedures to **detect, report, and respond** to security incidents.
+- **Example:** Security team monitors logs, detects unauthorized access, and alerts admin.
+
+### 1️⃣0️⃣ Incident Handling and Response
+
+- **Steps (IR process):**
+  
+  **1. Preparation** → Tools, access, playbooks ready
+
+  **2. Identification** → Detect the incident
+
+  **3. Containment** → Stop spread of attack
+
+  **4. Eradication** → Remove malware or vulnerabilities
+
+  **5. Recovery** → Restore systems safely
+
+  **6. Lessons Learned** → Improve defenses
+
+- **Example:** Responding to a ransomware attack by isolating infected machines, restoring backups.
+
+### 1️⃣1️⃣ Role of AI and ML in Cybersecurity
+
+- AI/ML helps analyze huge datasets quickly, detect anomalies, and predict attacks.
+- Tasks AI/ML can help with:
+  - Intrusion detection
+  - Malware detection
+  - Network traffic anomaly detection
+  - Threat intelligence analysis
+
+### 1️⃣2️⃣ How AI and ML Prevent Cyber Attacks
+
+- **Real-time monitoring:** AI detects unusual login patterns or data transfers.
+- **Predictive defense:** ML predicts potential vulnerabilities before exploitation.
+- **Automation:** AI automates routine security tasks (e.g., patching, alerts).
+- **Example:** A system using ML flags multiple failed login attempts from unusual countries → triggers MFA challenge or blocks IP.
+
+### ✅ Key Takeaway:
+
+Information Security Controls ensure **proactive and layered defense**. Risk management, threat intelligence, incident response, and AI/ML integration help organizations **stay ahead of attackers** instead of just reacting after damage.
+
+--- 
