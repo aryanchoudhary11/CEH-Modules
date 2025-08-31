@@ -336,3 +336,61 @@ Risk = Threat × Vulnerability × Impact
 Information Security Controls ensure **proactive and layered defense**. Risk management, threat intelligence, incident response, and AI/ML integration help organizations **stay ahead of attackers** instead of just reacting after damage.
 
 --- 
+
+## Information Security Laws and Standards
+
+### 1️⃣ Payment Card Industry Data Security Standard (PCI DSS)
+
+- **Purpose:** Protect cardholder data and prevent fraud in payment systems.
+- **Requirements:** Secure network, encrypt data, maintain access control, monitor and test systems.
+- **Example:** Online stores must encrypt credit card information and regularly test firewalls.
+
+### 2️⃣ ISO/IEC Standards
+
+- **Purpose:** International standards for information security management.
+- **Key standard:** ISO/IEC 27001 → framework for creating an Information Security Management System (ISMS).
+- **Example:** Companies follow ISO 27001 to systematically manage and protect sensitive data.
+
+### 3️⃣ Health Insurance Portability and Accountability Act (HIPAA)
+
+- **Purpose:** Protect sensitive patient health information in the U.S.
+- **Rules:** Privacy rule, security rule, breach notification.
+- **Example:** Hospitals must encrypt electronic health records and restrict access to authorized personnel.
+
+### 4️⃣ Sarbanes-Oxley Act (SOX)
+
+- **Purpose:** Ensure financial reporting accuracy and prevent corporate fraud (mainly in U.S. public companies).
+- **Requirement:** Proper internal controls and auditing of IT systems storing financial data.
+- **Example:** Banks maintaining logs and backups for all transactions to comply with SOX audits.
+
+### 5️⃣ Digital Millennium Copyright Act (DMCA)
+
+- **Purpose:** Protect copyrighted material online and regulate digital content use.
+- **Example:** You can’t illegally distribute software, movies, or music online; websites must respond to takedown requests.
+
+### 6️⃣ Federal Information Security Management Act (FISMA)
+
+- **Purpose:** Requires U.S. federal agencies to develop, document, and implement information security programs.
+- **Example:** Government agencies must follow structured risk management and periodic security audits.
+
+### 7️⃣ General Data Protection Regulation (GDPR)
+
+- **Purpose:** Protect personal data of EU citizens.
+- **Key rights:** Consent, right to access, right to be forgotten, data portability.
+- **Example:** Websites collecting EU user data must explicitly ask for consent and allow data deletion on request.
+
+### 8️⃣ Data Protection Act 2018 (DPA)
+
+- **Purpose:** UK law aligning with GDPR to regulate personal data processing.
+- **Example:** Companies in the UK must maintain records of how they handle personal data and report breaches within 72 hours.
+
+### 9️⃣ Cyber Law in Different Countries
+
+- **Purpose:** Each country has laws regulating cybercrime, data privacy, and online content.
+- **Examples:**
+  - **India:** IT Act 2000 (amended) → cybercrime and digital signatures.
+  - **U.S.:** CFAA (Computer Fraud and Abuse Act) → hacking and unauthorized access.
+
+### ✅ Key Takeaway:
+
+Information Security Laws and Standards **ensure legal compliance, protect data, and guide organizations** in implementing secure practices. Ethical hackers and security professionals must understand these regulations to **avoid legal issues** while performing assessments.
