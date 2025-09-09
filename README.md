@@ -2027,3 +2027,63 @@ proxychains nmap -sT <target_ip>
 
 ---
 
+
+
+
+# Enumeration
+
+## Enumeration Concepts
+
+### 1. What is Enumeration?
+
+- **Definition:** Enumeration is the process of **actively connecting to a target system’s services** to extract detailed information about users, groups, shares, applications, and more.
+- Unlike scanning (which is more passive/stealthy), **enumeration is active and intrusive** — meaning the target will likely notice.
+- Think of it like:
+   - **Footprinting/Recon** = Observing a house from far away.
+   - **Scanning** = Knocking on doors/windows to see which are open.
+   - **Enumeration** = Entering through the open door and asking questions to find out who lives inside, how many rooms are there, and where valuables are kept.
+
+**Goal of Enumeration:**
+
+- Collect usernames, group names, system accounts
+- Gather network resources and shares
+- Extract service banners and versions
+- Identify policies and settings (like password policy, SNMP info, etc.)
+
+### 2. Techniques for Enumeration
+
+- Enumeration techniques depend on which services/ports are open (found during scanning). Some common ones:
+
+  **1. NetBIOS Enumeration (Port 137-139, 445)**
+
+     - Used in Windows systems to get usernames, shares, domain info.
+     - Example: Using tools like nbtstat or enum4linux.
+
+  **2. SNMP Enumeration (Port 161/162)**
+
+     - SNMP (Simple Network Management Protocol) often leaks network devices, routing tables, and system details if community strings (like public) are weak.
+
+  **3. LDAP Enumeration (Port 389)**
+
+     - Used in Active Directory environments. Can extract users, groups, policies, and domain structure.
+
+  **4. SMTP Enumeration (Port 25)**
+
+     - Attackers send commands like VRFY or EXPN to verify valid usernames/emails.
+
+  **5. DNS Enumeration (Port 53)**
+
+     - Getting info like zone transfers, hostnames, mail servers.
+
+  **6. Banner Grabbing (Multiple Ports)**
+
+     - Connecting to services (HTTP, FTP, SSH, etc.) to read their “banner,” which often reveals version numbers (useful for finding exploits).
+ 
+ ### Real-World Example
+
+👉 Imagine you’re testing a company’s internal network:
+
+   - During scanning, you find Port 445 (SMB) open.
+   - Using enumeration (```enum4linux```), you discover 5 usernames on the system: admin, guest, john, susan, itdept.
+   - You then test smbclient with a blank password → You successfully log in with the guest account and see a shared folder named HR_Files.
+   - That’s real enumeration: turning an open port into actual, actionable information.
