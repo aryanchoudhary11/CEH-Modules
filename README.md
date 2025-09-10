@@ -2087,3 +2087,64 @@ proxychains nmap -sT <target_ip>
    - Using enumeration (```enum4linux```), you discover 5 usernames on the system: admin, guest, john, susan, itdept.
    - You then test smbclient with a blank password → You successfully log in with the guest account and see a shared folder named HR_Files.
    - That’s real enumeration: turning an open port into actual, actionable information.
+
+## NetBIOS Enumeration 
+
+📌 What is NetBIOS?
+
+- NetBIOS (Network Basic Input/Output System) is an older API that allows applications on different computers to communicate over a LAN.
+- It’s tightly **linked with SMB (Server Message Block)** and **Windows file/printer sharing.**
+- **Runs over Ports:** 137 (NetBIOS Name), 138 (Datagram), 139 (Session) and modern SMB uses 445.
+
+**Why Hackers Enumerate NetBIOS?**
+
+- To get usernames, groups, network shares, domain names, and OS details.
+- To check if null sessions (unauthenticated connections) are possible.
+- To identify misconfigured shares that leak sensitive files.
+
+### 1. NetBIOS Enumeration Tools
+
+Here are the main tools hackers (and pentesters) use:
+
+**1. nbtstat (built-in Windows command)**
+
+  - Shows NetBIOS names and sessions.
+  - Example:
+   ```
+   nbtstat -A <IP>
+   ```
+
+➝ Returns remote machine’s NetBIOS table (computer name, domain, logged-in users).
+
+**2. Net View (Windows)**
+
+  - Displays network resources and shared folders.
+  - Example:
+   ```
+   net view \\192.168.1.10
+   ```
+
+**3. Enum4Linux (Linux)**
+
+  - A popular tool to enumerate Windows machines via SMB/NetBIOS.
+  - Example:
+    ```
+    enum4linux -a <IP>
+    ```
+
+**4. NBTScan (Linux/Windows)**
+
+  - Fast scanner for NetBIOS information.
+  - Example:
+  ```
+  nbtscan 192.168.1.0/24
+  ```
+
+**5. Metasploit Auxiliary Modules**
+
+  - Example:
+  ```
+  use auxiliary/scanner/netbios/nbname
+  set RHOSTS 192.168.1.0/24
+  run
+  ```
