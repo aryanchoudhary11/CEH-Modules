@@ -2148,3 +2148,56 @@ Here are the main tools hackers (and pentesters) use:
   set RHOSTS 192.168.1.0/24
   run
   ```
+
+### 2. Enumerating User Accounts
+
+- **Null Session Attack:** If Windows allows null sessions (```net use \\<IP>\IPC$ "" /u:""```), attackers can list user accounts.
+- Example with **enum4linux:**
+```
+enum4linux -U 192.168.1.10
+```
+
+➝ Lists usernames available on the target system.
+
+**Real-world risk:** With usernames, an attacker can try brute-force password attacks or password spraying.
+
+### 3. Enumerating Shared Resources Using Net View
+
+Windows’ ```net view``` command is simple but powerful.
+
+- **Example:**
+```
+net view \\192.168.1.10
+```
+
+➝ Shows all shared folders and printers on the target machine.
+
+- If shares are open (like ```\\192.168.1.10\Public```), attackers can mount them:
+```
+net use Z: \\192.168.1.10\Public
+```
+
+➝ Maps the share to drive Z: on the attacker’s machine.
+
+**Scenario:** 
+
+- You find a share called HR_Files that contains salary spreadsheets.
+- That’s a major data exposure risk caused by weak NetBIOS/SMB configurations.
+
+### 4. NetBIOS Enumeration using AI
+
+This is the modern twist 🔥
+
+AI can enhance NetBIOS enumeration in a few ways:
+
+**1. Automated Pattern Recognition:** AI can quickly analyze outputs from enum4linux, nbtscan, or logs to identify anomalies (e.g., unexpected shares, orphan accounts).
+**2. Credential Guessing Optimization:** AI models can predict the most likely weak passwords for enumerated usernames, improving brute-force efficiency.
+**3. Log Analysis:** AI-driven SIEMs (like Splunk with ML) can detect suspicious enumeration attempts in real-time.
+**4. Red Team AI Assistants:** Imagine feeding AI with NetBIOS scan results — it could automatically suggest exploitation paths (“These shares look world-readable, mount them” or “This user may be a domain admin candidate”).
+
+**⚡ Example:**
+
+- You run enum4linux and get 20 usernames.
+- Feeding them into an AI assistant trained for offensive security could highlight:
+  - Common weak passwords for those users.
+  - Which accounts likely have elevated privileges.
