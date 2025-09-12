@@ -2216,3 +2216,28 @@ During a pentest:
 - Mount the share with ```smbclient``` and discover an Excel sheet with bank credentials.
 
 💡 That’s how enumeration transforms a “boring open port” into critical data leakage.
+
+## SNMP Enumeration
+
+### 1. Working of SNMP
+
+**What it is:**
+- **SNMP (Simple Network Management Protocol)** is a protocol used by network devices (routers, switches, firewalls, printers, servers, UPS, IoT devices) **to expose management and telemetry data** to a central manager (monitoring system). The device runs an agent that responds to queries.
+
+**Key concepts:**
+
+- **Manager** ↔ Agent model. Manager queries OIDs (object IDs); agent responds.
+
+- **Ports:** UDP 161 (queries), UDP 162 (traps/notifications).
+
+- **Versions:**
+
+   - **v1 / v2c:** use plain community strings (like “public” or “private”) — no encryption.
+
+   - **v3:** adds authentication and encryption (much safer).
+
+**Real-world example (overview):**
+A company’s network monitoring server polls all routers every 60 seconds to gather interface counters and CPU load. If a router’s CPU crosses a threshold, it sends an SNMP trap (UDP 162) to the manager.
+
+**Offensive / enumeration risk:**
+If a device uses a default community string (public) and SNMPv2c, an attacker can read the device’s config, ARP table, routing table, interface MACs, and sometimes even change settings (if read-write community exists).
